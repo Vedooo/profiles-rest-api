@@ -1,0 +1,18 @@
+start the project with cli
+
+django-admin.py startproject profiles_project .
+python manage.py startapp profiles_api
+
+
+add frameworks and apps on settings.py
+
+'rest_framework',
+'rest_framework.authtoken',
+'profiles_api',
+
+
+after that open runserver with manage.py
+
+python manage.py runserver 0.0.0.0:8000
+
+and go to 127.0.0.1:8000 domain
