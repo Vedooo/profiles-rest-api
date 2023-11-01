@@ -1,18 +1,34 @@
-start the project with cli
+A) Installation steps
+
+1) start the project with cli
 
 django-admin.py startproject profiles_project .
 python manage.py startapp profiles_api
 
 
-add frameworks and apps on settings.py
+2) add frameworks and apps on settings.py
 
 'rest_framework',
 'rest_framework.authtoken',
 'profiles_api',
 
 
-after that open runserver with manage.py
+3) after that open runserver with manage.py
 
-python manage.py runserver 0.0.0.0:8000
+python manage.py runserver 0.0.0.0:8000and go to 127.0.0.1:8000 domain
 
-and go to 127.0.0.1:8000 domain
+B) Create DB Model for django app
+
+1) on profiles_api/models.py we have to create our db model
+
+required modules:
+
+from django.contrib.auth.models import AbstractBaseUser
+from django.contrib.auth.models import PermissionsMixin
+from django.contrib.auth.models import BaseUserManager
+
+
+2) we create a custom user model in models.py with decided django frameworks and classes.
+after that we added the changes we did on settings.py
+
+AUTH_USER_MODEL = 'profiles_api.UserProfile'
