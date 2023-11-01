@@ -15,7 +15,7 @@ python manage.py startapp profiles_api
 
 3) after that open runserver with manage.py
 
-python manage.py runserver 0.0.0.0:8000and go to 127.0.0.1:8000 domain
+python manage.py runserver 0.0.0.0:8000 and go to 127.0.0.1:8000 domain
 
 B) Create DB Model for django app
 
@@ -46,3 +46,21 @@ AUTH_USER_MODEL = 'profiles_api.UserProfile'
 - After that migration will be create, next is running the migration
 
 "python manage.py migrate"
+
+C) Create superuser
+
+1) We have create super user for manangement side, we can create with django cli
+
+"python manage.py createsuperuser"
+
+- After that, it will ask a information about email, name and password(Sb15)
+
+2) Enable django admin
+
+- on profiles-api/admin.py we have to set our model and function before we created.
+
+- and test it.
+
+"python manage.py runserver 0.0.0.0:8000" and go to 127.0.0.1:8000
+
+- on 127.0.0.1:8000/admin section, we can login our superuser and management dashboard
