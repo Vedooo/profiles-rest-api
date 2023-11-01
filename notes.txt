@@ -32,3 +32,17 @@ from django.contrib.auth.models import BaseUserManager
 after that we added the changes we did on settings.py
 
 AUTH_USER_MODEL = 'profiles_api.UserProfile'
+
+3) Create django migrations
+
+- connect vagrant server with 
+
+"vagrant ssh"
+
+- activate venv and use makemigrations with manage.py
+
+"python manage.py makemigrations profiles_api"
+
+- After that migration will be create, next is running the migration
+
+"python manage.py migrate"
