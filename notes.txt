@@ -109,3 +109,30 @@ if its success it will return a message, else it will return bad request(HTTP 40
 
 -- Now we can use all methods with our methods in profiles_api/views.py
 
+G) ViewSets
+
+1) Processes list for api like create, update, list, etc....
+
+- We can use a simple CRUD interface for db.
+
+- Quick simple api model.
+
+- working with standart data structures.
+
+- etc...
+
+2) We create a viewset in profiles_api/views.py
+
+- from rest_framework import viewsets
+
+- Viewsets can use for support views endpoints
+
+3) We need to register our viewset on /profiles_api/urls.py
+
+- Than we can reach our viewset on home path of api/
+
+4) Than we can create other functions like add, create, update, retrieve, partial_update...
+
+- But as the api_views steps we need a serializer but we can use same serializer.
+
+- pk is primary key
