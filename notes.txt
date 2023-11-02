@@ -90,3 +90,22 @@ D) Create APIView
     urlpatterns = [
         path('hello-view/', views.HelloApiView.as_view()),
     ]
+
+F) Create Serializer for APIView
+
+1) We create a Serializer for APIView on profiles_api/serializer.py
+
+- We need to add POST method for APIView 
+
+-- We add "status" framework for http methods status information on views.py
+so if post method will send it will return the status of method
+
+-- We add post method with serializer class and we check if its success or not
+if its success it will return a message, else it will return bad request(HTTP 400).
+
+2) Now we can post a name parameter as we want and return success and error code.
+
+3) We need to add PUT, PATCH and DELETE methods also.
+
+-- Now we can use all methods with our methods in profiles_api/views.py
+
