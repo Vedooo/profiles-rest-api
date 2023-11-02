@@ -64,3 +64,29 @@ C) Create superuser
 "python manage.py runserver 0.0.0.0:8000" and go to 127.0.0.1:8000
 
 - on 127.0.0.1:8000/admin section, we can login our superuser and management dashboard
+
+D) Create APIView
+
+1) We create an APIView in profiles_api/views.py
+
+- APIView is a api response interfaces for users, they can get response diffrently according to methods.
+
+2) We have to create endpoints for api urls on profiles_project/urls.py
+
+- For example: 
+
+    urlpatterns = [
+        path('admin/', admin.site.urls),
+    ]
+
+    is for admins side console url endpoint
+
+- We will create new urls.py in profiles_api, but first we have to include out new urls.py in the main urls.py
+
+    path('api/', include('profiles_api.urls'))
+
+- And than we will create and new path for HelloApiVİew on /profiles_api/urls.py
+
+    urlpatterns = [
+        path('hello-view/', views.HelloApiView.as_view()),
+    ]
