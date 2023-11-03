@@ -198,3 +198,7 @@ router.register('profile', views.UserProfileViewSet)
 
 from rest_framework.authentication import TokenAuthentication
 from profiles_api import permissions
+
+I) Will add a search feature for profiles on profiles_api/views.py
+
+- Now we can filter and search by name and email.
