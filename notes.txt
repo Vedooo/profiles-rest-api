@@ -202,3 +202,17 @@ from profiles_api import permissions
 I) Will add a search feature for profiles on profiles_api/views.py
 
 - Now we can filter and search by name and email.
+
+J) Will add login functionality on profiles_api/views.py
+
+1) We need to add settings and authentication token module
+
+from rest_framework.authtoken.views import ObtainAuthToken
+from rest_framework.settings import api_settings
+
+- After call the token class and create a view for UserLoginApiView, we have to add new url path
+on profiles_api/urls.py
+
+- And we can test our token with modheader chrome extension.
+
+- With token we can make any updated on the api. So with this way we provide the security for each user.
