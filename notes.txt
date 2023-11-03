@@ -136,3 +136,65 @@ G) ViewSets
 - But as the api_views steps we need a serializer but we can use same serializer.
 
 - pk is primary key
+
+
+H) Purpose of Profiles API
+
+- Create a new profile
+
+-- Handle registeration
+-- Validate profile data
+
+- Listing existing profiles
+
+-- Search for profile
+-- Email and name
+
+- View spesific profiles
+
+-- Profile ID
+
+- Update profile or logged in user
+
+-- Change name, email, password
+
+- Delete Profile
+
+1) API Urls
+
+- /api/profile/
+
+-- List all profiles when HTTP 'GET' method called.
+-- Create a new profile  when HTTP 'POST' method called.
+
+- /api/profile/<profile_id>
+
+-- View spesific profile details by using HTTP 'GET'
+-- Update object when using HTTP 'PUT or PATCH'
+-- Remove object when using HTTP 'DELETE
+
+2) We will create serializer for user profile creating process,
+
+- We will connect with /profiles_api/models.py UserProfile class and create a serializer for users
+
+- Now we can create a ViewSet for profiles and connect this viewset with url endpoint
+
+- We dont need any base_name query set settings because we create a queryset in profiles_api/views.py --> UserProfileViewSet
+so we dont set any base_name for url router.
+
+router = DefaultRouter()
+router.register('hello-viewset', views.HelloViewset, base_name='hello-viewset')
+router.register('profile', views.UserProfileViewSet)
+
+3) Now we need to create a permission class for rules of api usage.
+
+- User cant be anonym and cant change anything without permission, so we need to create process permission rule with permission class.
+
+- We set a update rule in profiles_api/permissions.py
+
+4) Now we need token auth for users.
+
+- In views.py we need to add auth framework and profiles_api/permissions.py in views.py
+
+from rest_framework.authentication import TokenAuthentication
+from profiles_api import permissions
