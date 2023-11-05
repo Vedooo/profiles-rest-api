@@ -309,3 +309,8 @@ DEBUG = bool(int(os.environ.get('DEBUG', 1)))
 - Finally gives permission to .sh files in the deploy folder
 
 chmod +x deploy/*.sh
+
+M) If we want our api run on a server we need to add a host on profiles_project/settings.py 
+ALLOWED_HOST list.
+
+We have to add localhost also. If we have virtual machine on cloud we need to add public address here too.
