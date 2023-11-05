@@ -292,3 +292,20 @@ from rest_framework.permissions import IsAuthenticatedOrReadOnly
 9) We can use just for permissions
 
 from rest_framework.permissions import IsAuthenticated
+
+L) Final part is deploying our API on AWS
+
+- Just we need to change deploy/setup.sh's PROJECT_GIT_URL parameter and than we need to set up
+our root path on ec2 machines.
+
+- on profiles_project/settings.py we have add a path 
+
+STATIC_ROOT = 'static/'
+
+- also change the debug settings as a environment variable
+
+DEBUG = bool(int(os.environ.get('DEBUG', 1)))
+
+- Finally gives permission to .sh files in the deploy folder
+
+chmod +x deploy/*.sh
